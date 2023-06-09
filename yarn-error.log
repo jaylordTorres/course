@@ -1,0 +1,65 @@
+Arguments: 
+  /Users/JayLordPTorres/.nvm/versions/node/v16.15.1/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js add native-base
+
+PATH: 
+  /Users/JayLordPTorres/.nvm/versions/node/v16.15.1/bin:/usr/local/opt/php@7.4/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/JayLordPTorres/.nvm/versions/node/v16.15.1/bin:/usr/local/opt/php@7.4/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Users/JayLordPTorres/Documents/tools/flutter/bin:/Users/JayLordPTorres/Documents/tools/android/cmdline-tools/bin:/Users/JayLordPTorres/Documents/tools/android/emulator:/Users/JayLordPTorres/Documents/tools/android/platform-tools:/Users/JayLordPTorres/Documents/tools/flutter/bin:/Users/JayLordPTorres/Documents/tools/android/cmdline-tools/bin:/Users/JayLordPTorres/Documents/tools/android/emulator:/Users/JayLordPTorres/Documents/tools/android/platform-tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.15.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+
+npm manifest: 
+  {
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web"
+    },
+    "dependencies": {
+      "expo": "^48.0.7",
+      "expo-constants": "~14.2.1",
+      "expo-linking": "~4.0.1",
+      "expo-router": "^1.2.0",
+      "expo-splash-screen": "~0.18.1",
+      "expo-status-bar": "~1.4.2",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "react-native": "0.71.3",
+      "react-native-gesture-handler": "~2.9.0",
+      "react-native-reanimated": "~2.14.4",
+      "react-native-safe-area-context": "4.5.0",
+      "react-native-screens": "~3.20.0",
+      "react-native-web": "~0.18.7"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.19.3",
+      "@babel/plugin-proposal-export-namespace-from": "^7.18.9"
+    },
+    "resolutions": {
+      "metro": "^0.73.7",
+      "metro-resolver": "^0.73.7"
+    },
+    "overrides": {
+      "metro": "^0.73.7",
+      "metro-resolver": "^0.73.7"
+    },
+    "name": "course",
+    "version": "1.0.0",
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
