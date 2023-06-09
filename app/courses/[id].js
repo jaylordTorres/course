@@ -5,7 +5,6 @@ import {
   CheckIcon,
   HStack,
   Icon,
-  Image,
   Spacer,
   Text,
   VStack,
@@ -15,7 +14,10 @@ import {
   ChevronLeftIcon,
 } from "native-base";
 import TopBar from "../../component/top_bar";
-import { useRouter } from "expo-router";
+import { useLocalSearchParams, usePathname, useRouter } from "expo-router";
+import { data } from "../../values/data";
+import { useMemo } from "react";
+import { Image } from "expo-image";
 
 const courseItems = [
   {
@@ -30,6 +32,14 @@ const courseItems = [
 
 export default function Detail() {
   const r = useRouter();
+  const { id } = useLocalSearchParams();
+
+  const course = useMemo(() => {
+    return data.find((i) => i.id);
+  }, [data, id]);
+
+  const tVidoes = `${course.contents.length} videos`;
+
   return (
     <>
       <TopBar
@@ -40,16 +50,14 @@ export default function Detail() {
         }
         title={"Course Details"}
       ></TopBar>
-      <View style={{ marginHorizontal: 20 }}>
+      <View style={{ marginHorizontal: 20, paddingBottom: 150 }}>
         <Image
-          source={{
-            uri: "https://wallpaperaccess.com/full/317501.jpg",
-          }}
-          alt="Alternate Text"
+          source={course.photo}
+          alt={course.name}
           size="xl"
-          style={{ width: "100%" }}
+          style={{ width: "100%", height: 200 }}
         />
-        <VStack space={"2"} style={{ paddingHorizontal: 20 }}>
+        <VStack space={"4"} style={{ paddingHorizontal: 20 }}>
           <HStack>
             <Button
               size={"sm"}
@@ -65,19 +73,22 @@ export default function Detail() {
               variant={"outline"}
               style={s.infoButton}
             >
-              6 videos
+              {tVidoes}
             </Button>
           </HStack>
           <HStack>
-            <Text fontSize={"xl"}>
-              AI/ML Tool examples part 3 - Title-Drafting Assistant
+            <Text fontSize={"xl"} fontWeight={"bold"}>
+              {course.title}
             </Text>
           </HStack>
-          <Text>Course Content</Text>
-          {courseItems.map((i) => (
+          <HStack>
+            <Text fontSize={"lg"}>{course.description}</Text>
+          </HStack>
+          <Text fontSize={"lg"}>Course Content</Text>
+          {course.subDescriptions.map((i) => (
             <HStack space={["2"]}>
-              <CheckIcon size={"lg"} color={"green.500"} />
-              <Text fontSize={"lg"}>{i.title}</Text>
+              <CheckIcon size={"xl"} color={"green.500"} />
+              <Text fontSize={"lg"}>{i.description}</Text>
             </HStack>
           ))}
         </VStack>

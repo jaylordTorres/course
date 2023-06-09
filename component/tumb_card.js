@@ -3,23 +3,25 @@ import { View, Avatar, Box, Button, HStack, Image, Text } from "native-base";
 import { useRouter } from "expo-router";
 import Link from "./link";
 
-export default function ThumbCard({ id }) {
-  const router = useRouter();
+export default function ThumbCard({ id, course }) {
   return (
     <Link href={"/courses/" + id}>
       <View style={s.container}>
         <Image
-          source={{
-            uri: "https://wallpaperaccess.com/full/317501.jpg",
-          }}
-          alt="Alternate Text"
+          source={course.photo}
+          alt={course.name}
           size="xl"
-          style={{ width: "100%" }}
+          style={{ width: "100%", height: "25vh" }}
         />
-        <Text fontSize={"xl"} marginTop={"2"} marginBottom={"2"}>
-          Course Name
+        <Text
+          fontSize={"xl"}
+          marginTop={"2"}
+          marginBottom={"2"}
+          fontWeight={"500"}
+        >
+          {course.title}
         </Text>
-        <HStack alignItems={"center"} space={"4"}>
+        {/* <HStack alignItems={"center"} space={"4"}>
           <Avatar
             size={"md"}
             bg="green.500"
@@ -30,7 +32,7 @@ export default function ThumbCard({ id }) {
             AJ
           </Avatar>
           <Text>Author</Text>
-        </HStack>
+        </HStack> */}
       </View>
     </Link>
   );
