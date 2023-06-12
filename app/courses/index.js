@@ -6,17 +6,6 @@ import ThumbCard from "../../component/tumb_card";
 import { Link } from "expo-router";
 import { data } from "../../values/data";
 
-const courses = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-  { id: 8 },
-];
-
 export default function Courses() {
   return (
     <>
@@ -30,7 +19,9 @@ export default function Courses() {
           </Link>
         }
       />
-      <VStack justifyContent={"stretch"} marginX="4">
+      <VStack
+
+      marginX="4">
         <Banner />
         {data.map((i) => (
           <ThumbCard key={i.id} id={i.id} course={i} />

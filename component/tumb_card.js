@@ -11,7 +11,7 @@ export default function ThumbCard({ id, course }) {
           source={course.photo}
           alt={course.name}
           size="xl"
-          style={{ width: "100%", height: "25vh" }}
+          style={{ width: "100%", height: 150 }}
         />
         <Text
           fontSize={"xl"}

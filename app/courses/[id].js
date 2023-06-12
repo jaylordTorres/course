@@ -18,17 +18,7 @@ import { useLocalSearchParams, usePathname, useRouter } from "expo-router";
 import { data } from "../../values/data";
 import { useMemo } from "react";
 import { Image } from "expo-image";
-
-const courseItems = [
-  {
-    id: 1,
-    title: "80 degrees away from eachother, the tail end of the encapsulating",
-  },
-  {
-    id: 2,
-    title: "80 degrees away from eachother, the tail end of the encapsulating",
-  },
-];
+// import { WebView } from "react-native-webview";
 
 export default function Detail() {
   const r = useRouter();
@@ -81,16 +71,24 @@ export default function Detail() {
               {course.title}
             </Text>
           </HStack>
-          <HStack>
-            <Text fontSize={"lg"}>{course.description}</Text>
-          </HStack>
           <Text fontSize={"lg"}>Course Content</Text>
-          {course.subDescriptions.map((i) => (
+          {/* {course.subDescriptions.map((i) => (
             <HStack space={["2"]}>
               <CheckIcon size={"xl"} color={"green.500"} />
               <Text fontSize={"lg"}>{i.description}</Text>
             </HStack>
-          ))}
+          ))} */}
+
+          <Text fontSize={"lg"}>Course Description</Text>
+          <HStack>
+            <Text fontSize={"lg"}>{course.description}</Text>
+          </HStack>
+          {/* <WebView
+            style={{ flex: 1 }}
+            source={{ uri: `https://www.youtube.com/embed/rxD321l2svE` }}
+            javaScriptEnabled={true}
+            allowsFullscreenVideo={true}
+          /> */}
         </VStack>
       </View>
     </>
